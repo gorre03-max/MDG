@@ -184,7 +184,12 @@
                     if (!response.ok) throw new Error(`Error en la red: ${response.statusText}`);
 
                     const tsvData = await response.text();
+
+                    console.log(tsvData);
+
                     const rows = tsvData.trim().split('\n').slice(1);
+
+                    console.log(rows);
 
                     state.allGames = rows.map(row => {
                         const [title, source, imageUrl, link, price, description, date, verticalAlignment] = row.split('\t');
