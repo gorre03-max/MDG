@@ -180,21 +180,21 @@
             const loadGames = async () => {
                 showMessage('Cargando novedades...');
                 try {
-                    const response = await fetch(GAMES_TSV_URL);
-                    if (!response.ok) throw new Error(`Error en la red: ${response.statusText}`);
+                    // const response = await fetch(GAMES_TSV_URL);
+                    // if (!response.ok) throw new Error(`Error en la red: ${response.statusText}`);
 
-                    const tsvData = await response.text();
+                    // const tsvData = await response.text();
 
-                    console.log(tsvData);
+                    // console.log(tsvData);
 
-                    const rows = tsvData.trim().split('\n').slice(1);
-
-                    console.log(rows);
+                    // const rows = tsvData.trim().split('\n').slice(1);
 
                     state.allGames = rows.map(row => {
                         const [title, source, imageUrl, link, price, description, date, verticalAlignment] = row.split('\t');
                         return { title, source, imageUrl, link, price, description, date, verticalAlignment };
                     }).filter(game => game.title); // Filtrar filas vacías
+
+                    console.log(state);
 
                     applyFilter();
 
