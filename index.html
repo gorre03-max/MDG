@@ -1,343 +1,260 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rol de Gorre</title>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Rol de Gorre</title>
 
-    <!-- Metadatos para SEO y redes sociales -->
-    <meta name="description" content="">
-    <meta property="og:title" content="Rol de Gorre">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="https://pbs.twimg.com/profile_banners/15847515/1678908416/1500x500">
-    <meta property="og:url" content="https://gorre03-max.github.io/MDG/">
-    <meta property="og:type" content="website">
+      <!-- Metadatos para SEO y redes sociales -->
+      <meta name="description" content="">
+      <meta property="og:title" content="Rol de Gorre">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="./gorre.jpg">
+      <meta property="og:url" content="https://gorre03-max.github.io/MDG/">
+      <meta property="og:type" content="website">
 
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="favicon.ico">
+      <!-- Favicons -->
+      <link rel="icon" href="gorre.ico">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+      <!-- Semantic UI -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Fuentes de Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700;900&display-swap" rel="stylesheet">
+      <!-- Fuentes de Google -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700;900&display-swap" rel="stylesheet">
 
-    <!-- Estilos personalizados -->
-    <style>
-        body {
-            font-family: 'Lato', sans-serif;
-            background: linear-gradient(to bottom, #2c3e50, #0a2e47);
-            background-attachment: fixed;
+      <!-- Estilos personalizados -->
+      <style>
+        .padding_top {
+          padding-top: 5em;
         }
-        h1, h4 { font-family: 'Roboto', sans-serif; }
-        header { font-family: sans-serif; }
+      </style>
 
-        /* Clases personalizadas para las insignias de origen */
-        .source { color: white; }
-        .source-indie { background-color: #fa5c5c; }
-        .source-mecenazgo { background-color: #1e62a3; }
-        .source-en-tiendas { background-color: #17a2b8; }
-        .source-preventa { background-color: #ffc107; color: #212529; }
-        .source-avance { background-color: #212529; }
-        .source-otros { background-color: #8e44ad; }
-        .price-tag.free { background-color: #28a745; color: white; }
+      <!-- Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-JL67FDGSX2"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JL67FDGSX2');
+      </script>
+  </head>
+  <body>
+    <div class="ui fixed inverted menu">
+      <div class="ui container">
+        <a href="#" class="header item">
+          <img class="logo" src="./gorre.jpg">
+        </a>
+        <a href="#" class="item">Rol de Gorre</a>
+      </div>
+    </div>
 
-        /* Estilos para los botones de filtro */
-        .filter-btn { background-color: white; color: black; border: 1px solid #ddd; border-radius: 9999px; padding: 0.5rem 1rem; font-size: 0.9rem; font-family: 'Lato', sans-serif; cursor: pointer; transition: all 0.2s ease; }
-        .filter-btn:hover { background-color: #e9ecef; border-color: #ccc; }
-        .filter-btn.active { background-color: #ffc107; color: black; border-color: #ffc107; }
-
-        /* Estilos para los botones de paginación */
-        .pagination-btn { background-color: white; color: black; border: 1px solid #ddd; border-radius: 6px; padding: 0.5rem 1rem; cursor: pointer; font-family: 'Roboto', sans-serif; transition: all 0.2s ease; }
-        .pagination-btn:hover { background-color: #e9ecef; border-color: #ccc; }
-        .pagination-btn:disabled { cursor: not-allowed; opacity: 0.6; }
-        .pagination-btn.active { background-color: #ffc107; color: black; border-color: #ffc107; font-weight: 700; }
-    </style>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JL67FDGSX2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JL67FDGSX2');
-    </script>
-</head>
-<body class="text-gray-300">
-
-    <!-- Barra Superior -->
-    <header class="bg-yellow-500 text-black py-3 px-6 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto grid grid-cols-3 items-center">
-            <!-- Izquierda: M2 -->
-            <div class="justify-self-start">
-                 <span class="font-bold md:text-2xl text-4xl">Gorre</span>
-            </div>
-
-            <!-- Centro (Desktop) / Derecha (Móvil) -->
-            <div class="md:justify-self-center col-span-2 md:col-span-1">
-                <!-- Título (Desktop) -->
-                <p class="hidden md:block font-semibold text-lg whitespace-nowrap text-center">Partidas de rol para 3-6 Jugadores</p>
-                <!-- Título (Móvil) -->
-                <p class="md:hidden text-right text-lg leading-[1.2] font-semibold">Partidas de rol para 3-6 Jugadores</p>
-            </div>
-
-            <!-- Derecha (Solo Desktop): Fecha -->
-            <div class="hidden md:block justify-self-end">
-                <span id="update-date" class="text-sm font-semibold"></span>
-            </div>
-        </div>
-    </header>
-
-    <main class="container mx-auto px-4 py-12">
-        <!-- Título principal -->
-        <section class="text-center mb-12">
-            <h1 class="text-5xl md:text-6xl md:leading-[.85] font-extrabold text-white leading-[.85] mb-2">
-                Oferta de Partidas
-            </h1>
-            <h4 class="text-lg md:text-xl text-yellow-400">de Gorre</h4>
-        </section>
-
-        <!-- Controles de Filtro -->
-        <section id="filter-controls" class="flex flex-wrap justify-center gap-2 mb-10">
-            <button class="filter-btn active" data-source="all">Todos</button>
-            <!-- <button class="filter-btn" data-source="AVANCE">Avance</button>
-            <button class="filter-btn" data-source="MECENAZGO">Mecenazgos</button>
-            <button class="filter-btn" data-source="EN TIENDAS">En Tiendas</button>
-            <button class="filter-btn" data-source="PREVENTA">Preventa</button>
-            <button class="filter-btn" data-source="INDIE">Indies</button>
-            <button class="filter-btn" data-source="OTROS">Otros</button> -->
-        </section>
-
-        <!-- Mensaje de error o carga -->
-        <div id="message-area" class="text-center text-white my-8"></div>
-
-        <!-- Rejilla de Juegos -->
-        <div id="game-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Las tarjetas de juego se insertarán aquí dinámicamente -->
-        </div>
-
-        <!-- Controles de Paginación -->
-        <nav id="pagination-controls" class="flex justify-center items-center mt-12 space-x-2">
-            <!-- Los botones de paginación se insertarán aquí -->
-        </nav>
-    </main>
+    <div class="ui main container padding_top">
+      <div id="dynamic-content">
+      </div>
+    </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // URLs de los datos
-            const GAMES_TSV_URL = 'https://docs.google.com/spreadsheets/d/1hX6Y0wqFcoyBsIQXkgypgogijbrTSqZRJGRw5Lqh9Ek/export?format=tsv&id=1hX6Y0wqFcoyBsIQXkgypgogijbrTSqZRJGRw5Lqh9Ek&gid=0';
-            // const DATE_TSV_URL = 'https://docs.google.com/spreadsheets/d/1kOeLYcSxC0WTc_ndyHxMJtfGTvad9V9aPTjrQJ_llfo/export?format=tsv&gid=2131940647';
+      const cards = [{
+        imageUrl: 'https://www.nosolorol.com/4085-large_default/la-mas-profunda-herida-papel.jpg',
+        title: 'La más profunda herida',
+        subTitle: 'Hombre Lobo',
+        description: 'Para el Culto de Fenris, el mundo se ha vuelto una zona de guerra. No hay espacio para la piedad: si no estás con Gaia, eres el enemigo. Su extremismo no surgió de la nada; es una respuesta desesperada a las tragedias y las pérdidas que han marcado su camino. ¿Estás listo para unirte a una causa que no conoce la piedad?',
+        contentWarning: 'Violencia, Lenguaje soez, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '5.99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/4086-large_default/recuperacion-papel.jpg',
+        title: 'Recuperación',
+        subTitle: 'Hombre Lobo',
+        description: 'Una manada entera de Garou ha desaparecido, dejando un Túmulo indefenso y a merced de un enemigo que creían lejano. Ahora, una manada de jóvenes inexpertos debe adentrarse en la oscuridad, investigar qué ha sucedido y contraatacar. No hay tiempo que perder, la supervivencia del clan pende de un hilo. ¿Estás listo para esta misión?',
+        contentWarning: 'Violencia, Lenguaje soez, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '5.99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/4093-large_default/pantalla-del-narrador-y-kit-de-herramientas-hombre-lobo-el-apocalipsis-5-edicion-papel.jpg',
+        title: 'Lo que las aguas escondían',
+        subTitle: 'Hombre Lobo',
+        description: 'Cada batalla es un nuevo desafío, algunas se ganan, otras se pierden. ¿Pero de qué sirven si las pérdidas se acumulan y las victorias son cada vez más escasas? La sanación parece una utopía inalcanzable, mientras la destrucción se ha convertido en nuestra especialidad. ¿Estás listo para esta lucha?',
+        contentWarning: 'Violencia, Lenguaje soez, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '15,00€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/4089-large_default/hombre-lobo-el-apocalipsis-5-edicion-papel.jpg',
+        title: 'No importa cuán pequeño',
+        subTitle: 'Hombre Lobo',
+        description: 'Tu pariente te lo ha pedido, y no puedes decir que no. Un amigo ha desaparecido y el último rastro que tienes de él es su participación en las actividades del misterioso club de horticultura de la Zona de la Arboleda Oeste. ¿Qué puede esconder un simple club de jardinería? ¿Es solo una desaparición o un terrible secreto? Si tienes lo que hay que tener, adéntrate en la Arboleda Oeste para desvelar una verdad que podría cambiarte para siempre.',
+        contentWarning: 'Violencia, Lenguaje soez, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '29,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/2295-large_default/habitacion-311.jpg',
+        title: 'Habitación 311',
+        subTitle: 'Cultos Innombrables',
+        description: 'Hay lugares que no olvidan, y el hotel Black Pines es uno de ellos. Desde la masacre de 1926, el pueblo de Forestmouth sufre sucesos cada vez más extraños. Algunos susurran que algo siniestro quedó atrapado en el hotel, y ahora se agita, esperando... atrayendo a los curiosos, a los valientes que anhelan desenterrar un secreto que quizás debió quedar en el olvido. ¿Eres lo suficientemente valiente para unirte a la búsqueda?',
+        contentWarning: 'Violencia, Lenguaje soez, Nudismo, Temas maduros, Consumo de sustancias',
+        players: '2-4',
+        sessions: '1',
+        cost: '9,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/2355-large_default/inous-papel.jpg',
+        title: 'INous',
+        subTitle: 'Cultos Innombrables',
+        description: 'Un crowdfunding millonario, un dispositivo revolucionario, un genio de la tecnología... y un final sangriento. Edward Pretorious, el visionario detrás del iNous, ha aparecido decapitado justo cuando su proyecto estaba a punto de ver la luz. Su muerte se produce tras un mar de retrasos y quejas de sus seguidores. ¿Quién lo mató? ¿Uno de sus frustrados mecenas o un rival celoso? El misterio del iNous acaba de comenzar.',
+        contentWarning: 'Violencia, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '9,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/2426-large_default/glitch.jpg',
+        title: 'Glitch',
+        subTitle: 'Cultos Innombrables',
+        description: 'Un evento único ha sacudido la noche: una explosión extraterrestre ha iluminado el cielo de la ciudad, desatando una onda expansiva que ha roto cristales, pero que, sorprendentemente, ha dejado pocos heridos. Lo que parece un simple desastre se convierte en el inicio de una aventura que desafiará todo lo que crees saber. ¿Te atreves a desvelar la verdad que se esconde detrás de este impactante suceso?',
+        contentWarning: 'Violencia, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '9,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/2449-large_default/la-lista-papel.jpg',
+        title: 'La Lista',
+        subTitle: 'Cultos Innombrables',
+        description: 'Un extraño personaje te ha convocado en el corazón de Londres con una oferta imposible de rechazar: una misión intensa y de alto riesgo con una recompensa que cambiará tu vida. El tiempo apremia y cada decisión que tomes pondrá a prueba tus límites morales. ¿Aceptarás el desafío y te harás con el botín, o dejarás que la ética se interponga en tu camino?',
+        contentWarning: 'Violencia, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '9,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/2869-large_default/el-operativo-voor-papel.jpg',
+        title: 'El Operativo Voor',
+        subTitle: 'Cultos Innombrables',
+        description: 'Has cruzado la línea y ahora no hay vuelta atrás. Estás atrapado entre una letal red de espionaje con recursos ilimitados y un grupo de extremistas que, aunque despreciables, podrían ser tu única esperanza. ¿Serás capaz de sobrevivir sin perder tu esencia en un mundo donde la guerra es la única moneda de cambio? Lucha por tu vida, lucha por tu alma. Bienvenido al caos.',
+        contentWarning: 'Violencia, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '9,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/4083-large_default/dentelladas-de-amor-papel.jpg',
+        title: 'Dentelladas De Amor',
+        subTitle: 'Vampiro',
+        description: 'Es la última noche del año y la Príncipe te ha encomendado la misión más importante: escoltar a su Chiquillo a la fiesta de Nochevieja más salvaje en las madrigueras de los Nosferatu. Solo tienes una regla: devolverlo antes del amanecer, sin un rasguño. ¿Crees que un simple recado puede ser tan sencillo? En las sombras de la ciudad, un encargo de Nochevieja puede convertirse en una pesadilla.',
+        contentWarning: 'Violencia, Consumo de sustancias, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '5,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/4084-large_default/catar-la-luna-papel.jpg',
+        title: 'Catar la Luna',
+        subTitle: 'Vampiro',
+        description: 'Corre el rumor de una sangre especial, un elixir exótico llamado "luna de cereza" que provoca una euforia sin igual. Todos quieren probarla, pero nadie sabe de dónde viene. ¿Te atreves a buscarla y a descubrir el secreto detrás de este misterioso manjar? Saciar tu sed nunca había sido tan tentador.',
+        contentWarning: 'Violencia, Consumo de sustancias, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '5,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/4087-large_default/caso-sin-resolver-papel.jpg',
+        title: 'Caso sin Resolver',
+        subTitle: 'Cazador',
+        description: 'El pasado no siempre descansa en paz. A veces, vuelve a la vida. Hace tres años, Sam, el mejor amigo de Daria, murió. Ahora, está de vuelta, vivo, caminando entre nosotros. ¿Es un caso de identidad equivocada o una prueba de que los muertos están regresando? Ayuda a Daria a descubrir la verdad, pero prepárate, porque si los muertos caminan de nuevo, la línea entre la vida y la muerte podría desvanecerse para siempre.',
+        contentWarning: 'Violencia, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '5,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/4088-large_default/su-ultimo-truco-papel.jpg',
+        title: 'Su Último Truco',
+        subTitle: 'Cazador',
+        description: 'Cuando la verdad es más extraña que la ficción, los únicos que pueden encontrarla son aquellos que la cazan. En la ciudad de Rochefort, Massachusetts, el famoso "buscador de la verdad paranormal" Aaron Phelps ha desaparecido. Su última pista se desvanece en el único misterio que no pudo resolver: un lugar infestado de fantasmas. ¿Tienes lo que se necesita para enfrentarte a esta verdad y al horror que te espera?',
+        contentWarning: 'Violencia, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '5,99€'
+      }, {
+        imageUrl: 'https://www.nosolorol.com/3769-large_default/cazador-pantalla-del-narrador-y-kit-de-herramientas-papel.jpg',
+        title: 'Susurros en el tiempo',
+        subTitle: 'Cazador',
+        description: 'Bajo la bruma de un pueblo costero, algo acecha. Un rastro de víctimas inconscientes, esparcidas por la costa, siembra el pánico. ¿Es una bestia? ¿Una maldición? Los rumores se mezclan con la realidad, y el mar canta una canción de terror. ¡Es hora de actuar, Cazadores! Desvelad el misterio. Enfrentad al monstruo.',
+        contentWarning: 'Violencia, Consumo de sustancias, Lenguaje soez, Nudismo, Temas maduros',
+        players: '2-4',
+        sessions: '1',
+        cost: '15,00€'
+      }, {
+        imageUrl: 'https://cdn.svc.asmodee.net/production-edgees/uploads/image-converter/2022/10/bbg_Cthulhu_El-faro.webp',
+        title: 'El faro sin luz',
+        subTitle: 'La Llamada de Cthulhu',
+        description: 'Un naufragio, una tormenta que se acerca y un faro que ha dejado de parpadear. El 12 de abril de 1926, tu única esperanza es alcanzar la orilla de una isla solitaria. Pero en la oscuridad, algo más se agita. Beacon Island no solo ofrece refugio de los escollos, sino que oculta un misterio más aterrador que cualquier tempestad. ¿Lograrás encender la luz o te perderás para siempre en las sombras de la isla?',
+        contentWarning: 'Violencia',
+        players: '2-4',
+        sessions: '1',
+        cost: 'Gratis'
+      }, {
+        imageUrl: 'https://shadowlands.es/wp-content/uploads/2024/03/mas-alla-del-tiempo-icono-pdf.jpg',
+        title: 'Castle Bravo',
+        subTitle: 'El rastro de Cthulhu',
+        description: 'Eres un científico y has sido destinado al USS Bairoko, un portaaviones de escolta navegando en el Pacífico Sur. Formas parte del Séptimo Grupo de Combate y participarás en la Operación Castle, una serie de pruebas secretas que consisten en varias detonaciones termonucleares. Pero tras la primera explosión, tú y tus compañeros notáis que las cosas empiezan a volverse extrañas. Deberás averiguar qué está pasando si quieres salvar la nave y, lo más importante, salvar tu propia vida.',
+        contentWarning: 'Terror corporal, Gore',
+        players: '2-4',
+        sessions: '1',
+        cost: '12,95€'
+      }, {
+        imageUrl: 'https://cdn.svc.asmodee.net/production-edgees/uploads/image-converter/2022/10/bbg_Cthulhu_reglas_01.webp',
+        title: 'La maldición de la Casa Corbitt',
+        subTitle: 'La Llamada de Cthulhu',
+        description: 'Un arrendador, el Sr. Knott, os pide que examinéis un viejo caserón que posee en el centro de Boston, conocido como la Casa Corbitt. Los anteriores inquilinos, la familia Macario, se vieron implicados en una tragedia, y el propietario quiere comprender los misteriosos acontecimientos que tuvieron lugar allí y dejar las cosas claras. El Sr. Knott no ha podido alquilar la casa desde que sucedió la tragedia, y él espera que podáis aclarar la situación y restaurar su buen nombre.',
+        contentWarning: 'Terror',
+        players: '2-4',
+        sessions: '1',
+        cost: 'Gratis'
+      }]
 
-            // Estado de la aplicación
-            const state = {
-                allGames: [],
-                filteredGames: [],
-                currentPage: 1,
-                itemsPerPage: 18,
-                currentFilter: 'all',
-            };
-
-            // Elementos del DOM
-            const gameGrid = document.getElementById('game-grid');
-            const paginationControls = document.getElementById('pagination-controls');
-            const filterControls = document.getElementById('filter-controls');
-            const updateDateElement = document.getElementById('update-date');
-            const messageArea = document.getElementById('message-area');
-
-            /**
-             * Muestra un mensaje en el área designada.
-             * @param {string} message - El mensaje a mostrar.
-             * @param {('info'|'error')} type - El tipo de mensaje.
-             */
-            const showMessage = (message, type = 'info') => {
-                messageArea.innerHTML = `<p class="${type === 'error' ? 'text-red-500' : 'text-gray-400'}">${message}</p>`;
-            };
-
-            /**
-             * Carga la fecha de la última actualización y la muestra.
-             */
-            // const loadUpdateDate = async () => {
-            //     try {
-            //         const response = await fetch(DATE_TSV_URL);
-            //         if (!response.ok) throw new Error('No se pudo cargar la fecha.');
-            //         const dateText = await response.text();
-            //         updateDateElement.textContent = dateText.trim();
-            //     } catch (error) {
-            //         console.error("Error al obtener la fecha:", error);
-            //         updateDateElement.textContent = 'Fecha no disponible';
-            //     }
-            // };
-
-            /**
-             * Carga los datos de los juegos desde la hoja de cálculo.
-             */
-            const loadGames = async () => {
-                showMessage('Cargando novedades...');
-                try {
-                    const response = await fetch(GAMES_TSV_URL);
-                    if (!response.ok) throw new Error(`Error en la red: ${response.statusText}`);
-
-                    const tsvData = await response.text();
-
-                    const rows = tsvData.trim().split('\n').slice(1);
-
-                    const allGames = rows.map(row => {
-                        const [title, source, imageUrl, link, price, description, date, verticalAlignment] = row.split('\t');
-                        return { title, source, imageUrl, link, price, description, date, verticalAlignment };
-                    }).filter(game => game.title); // Filtrar filas vacías
-
-                    console.log(allGames);
-
-                    state.allGames = allGames;
-
-                    applyFilter();
-
-                } catch (error) {
-                    console.error('Error al cargar los datos:', error);
-                    showMessage('No se pudieron cargar los juegos. Inténtalo de nuevo más tarde.', 'error');
-                }
-            };
-
-            /**
-             * Crea el HTML para una tarjeta de juego.
-             * @param {object} game - El objeto del juego.
-             * @returns {string} El HTML de la tarjeta.
-             */
-            const createGameCardHTML = (game) => {
-                const { title = '', source = 'INDIE', imageUrl = '', link = '#', price = '', description = '', date = '', verticalAlignment = 'center' } = game;
-
-                const priceStr = price.trim();
-                const sourceStr = source.trim();
-                const priceClass = priceStr.toLowerCase().includes('gratis') ? 'price-tag free' : 'price-tag';
-                const sourceClass = `source-${sourceStr.toLowerCase().replace(/\s+/g, '-')}`;
-
-                return `
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform hover:-translate-y-1 transition-transform duration-300" data-source="${sourceStr}">
-                        <div class="relative">
-                            <span class="absolute top-4 right-4 text-sm font-bold py-1 px-2 rounded-md source ${sourceClass}">${sourceStr}</span>
-                            <img src="${imageUrl.trim()}" alt="Imagen de ${title.trim()}" class="w-full h-48 object-cover" style="object-position: ${verticalAlignment}" onerror="this.style.display='none'">
-                        </div>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <div class="flex justify-between items-start mb-2">
-                                <h2 class="text-xl font-bold text-gray-900 flex-grow pr-2">
-                                    <a href="${link.trim()}" target="_blank" rel="noopener noreferrer" class="hover:text-yellow-600 transition-colors duration-200">${title.trim()}</a>
-                                </h2>
-                                ${priceStr ? `<span class='text-sm font-semibold py-1 px-2 rounded bg-gray-200 text-gray-800 whitespace-nowrap ${priceClass}'>${priceStr}</span>` : ''}
-                            </div>
-                            <p class="text-gray-600 text-base leading-relaxed flex-grow">${description.trim()}</p>
-                            <div class="mt-4 text-right">
-                                <span class="text-xs text-gray-500 italic">${date.trim()}</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            };
-
-            /**
-             * Muestra los juegos de la página actual.
-             */
-            const displayPage = () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                gameGrid.innerHTML = '';
-
-                if (state.filteredGames.length === 0) {
-                    showMessage('No hay juegos que coincidan con el filtro seleccionado.', 'info');
-                    return;
-                }
-
-                messageArea.innerHTML = ''; // Limpiar mensajes si hay juegos
-
-                const startIndex = (state.currentPage - 1) * state.itemsPerPage;
-                const endIndex = startIndex + state.itemsPerPage;
-                const paginatedItems = state.filteredGames.slice(startIndex, endIndex);
-
-                const cardsHtml = paginatedItems.map(createGameCardHTML).join('');
-                gameGrid.innerHTML = cardsHtml;
-
-                setupPagination();
-            };
-
-            /**
-             * Configura y muestra los controles de paginación.
-             */
-            const setupPagination = () => {
-                paginationControls.innerHTML = '';
-                const pageCount = Math.ceil(state.filteredGames.length / state.itemsPerPage);
-
-                if (pageCount <= 1) return;
-
-                // Botón Anterior
-                paginationControls.insertAdjacentHTML('beforeend', `
-                    <button id="prev-page" class="pagination-btn" ${state.currentPage === 1 ? 'disabled' : ''}>Anterior</button>
-                `);
-
-                // Botones de página
-                for (let i = 1; i <= pageCount; i++) {
-                    paginationControls.insertAdjacentHTML('beforeend', `
-                        <button class="pagination-btn ${i === state.currentPage ? 'active' : ''}" data-page="${i}">${i}</button>
-                    `);
-                }
-
-                // Botón Siguiente
-                paginationControls.insertAdjacentHTML('beforeend', `
-                    <button id="next-page" class="pagination-btn" ${state.currentPage === pageCount ? 'disabled' : ''}>Siguiente</button>
-                `);
-            };
-
-            /**
-             * Aplica el filtro actual a la lista de juegos y actualiza la vista.
-             */
-            const applyFilter = () => {
-                if (state.currentFilter === 'all') {
-                    state.filteredGames = [...state.allGames];
-                } else {
-                    state.filteredGames = state.allGames.filter(game => game.source === state.currentFilter);
-                }
-                state.currentPage = 1;
-                displayPage();
-            };
-
-            // --- MANEJADORES DE EVENTOS ---
-
-            filterControls.addEventListener('click', (e) => {
-                if (e.target.classList.contains('filter-btn')) {
-                    filterControls.querySelector('.active').classList.remove('active');
-                    e.target.classList.add('active');
-
-                    state.currentFilter = e.target.dataset.source;
-                    applyFilter();
-                }
-
-            });
-
-            paginationControls.addEventListener('click', (e) => {
-                const target = e.target;
-                if (target.id === 'prev-page' && state.currentPage > 1) {
-                    state.currentPage--;
-                } else if (target.id === 'next-page' && state.currentPage < Math.ceil(state.filteredGames.length / state.itemsPerPage)) {
-                    state.currentPage++;
-                } else if (target.dataset.page) {
-                    state.currentPage = parseInt(target.dataset.page);
-                }
-                displayPage();
-            });
-
-            // --- INICIALIZACIÓN ---
-
-            const init = () => {
-
-                // loadUpdateDate();
-                loadGames();
-            };
-
-            init();
-        });
+      const dynamicContent = document.getElementById('dynamic-content');
+      const _showCardsHtml = (cardsHtml) => dynamicContent.innerHTML = `<div class="ui link cards">${cardsHtml}</div>`;
+      const _renderCardsHtml = (cards) => cards.map(_cardTemplate).join();
+      const _cardTemplate = ({
+        imageUrl,
+        title,
+        subTitle,
+        description,
+        contentWarning,
+        players,
+        sessions,
+        cost
+      }) => {
+        return `<div class="card">
+          <div class="image">
+            <img src="${imageUrl}">
+          </div>
+          <div class="content">
+            <div class="header">${title}</div>
+            <div class="meta">
+              <a>${subTitle}</a>
+            </div>
+            <div class="description">
+              ${description}
+            </div>
+          </div>
+          <div class="extra content">
+            <span class="right floated">
+              <i class="money icon"></i>
+              ${cost}
+            </span>
+            <div>
+              <i class="user icon"></i>
+              ${players}
+            </div>
+            <div>
+              ${contentWarning}
+            </div>
+          </div>
+        </div>`;
+      };
+      _showCardsHtml(_renderCardsHtml(cards));
     </script>
-</body>
+  </body>
 </html>
