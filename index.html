@@ -53,7 +53,15 @@
     </div>
 
     <div class="ui main container padding_top">
-      <div id="dynamic-content">
+      <div class="ui fluid grid">
+        <div class="three wide column">
+          <div id="subtitle-menu-content">
+          </div>
+        </div>
+        <div class="thirteen wide column">
+          <div id="card-content">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -213,9 +221,18 @@
         cost: 'Gratis'
       }]
 
-      const dynamicContent = document.getElementById('dynamic-content');
-      const _showCardsHtml = (cardsHtml) => dynamicContent.innerHTML = `<div class="ui link cards">${cardsHtml}</div>`;
-      const _renderCardsHtml = (cards) => cards.map(_cardTemplate).join();
+      const cardContent = document.getElementById('card-content');
+      const subTitleContent = document.getElementById('subtitle-menu-content');
+      const _showCardsHtml = (cardsHtml) => cardContent.innerHTML = `<div class="ui link cards">${cardsHtml}</div>`;
+      const _clearCardsHtml = () => cardContent.innerHTML = '';
+      const _showSubTitleMenuHtml = (subTitleHtml) => subTitleContent.innerHTML = `<div class="ui vertical fluid tabular menu"><a class="active item" data-value="">Todas</a>${subTitleHtml}</div>`;
+      const _deactivateAllSubTitleMenu = () => jQuery('#subtitle-menu-content .ui.menu .item').removeClass('active');
+      const _activateSubTitleMenu = (element) => jQuery(element).addClass('active');
+      const _allSubTitles = (cards) => cards.map((card) => card.subTitle).filter((value, index, array) => array.indexOf(value) === index).sort();
+      const _filterCardsBy = (subTitle) => (cards) => subTitle ? cards.filter((card) => card.subTitle === subTitle) : cards;
+      const _renderSubtitleHtml = (subTitles) => subTitles.map(_subTitleTemplate).join('');
+      const _renderCardsHtml = (cards) => cards.map(_cardTemplate).join('');
+      const _subTitleTemplate = (subTitle) => `<a class="item" data-value="${subTitle}">${subTitle}</a>`;
       const _cardTemplate = ({
         imageUrl,
         title,
@@ -240,10 +257,6 @@
             </div>
           </div>
           <div class="extra content">
-            <span class="right floated">
-              <i class="money icon"></i>
-              ${cost}
-            </span>
             <div>
               <i class="user icon"></i>
               ${players}
@@ -254,7 +267,20 @@
           </div>
         </div>`;
       };
+      _showSubTitleMenuHtml(_renderSubtitleHtml(_allSubTitles(cards)));
       _showCardsHtml(_renderCardsHtml(cards));
+
+      jQuery('#subtitle-menu-content .ui.menu .item').on('click', (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+
+        const subTitle = jQuery(event.currentTarget).data('value');
+        _deactivateAllSubTitleMenu();
+        _clearCardsHtml();
+        _showCardsHtml(_renderCardsHtml(_filterCardsBy(subTitle)(cards)));
+        _activateSubTitleMenu(event.currentTarget);
+        return false;
+      });
     </script>
   </body>
 </html>
