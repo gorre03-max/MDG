@@ -31,6 +31,18 @@
         .padding_top {
           padding-top: 5em;
         }
+        #subtitle-menu-content .ui.button {
+          background-color: white;
+        }
+
+        #subtitle-menu-content .ui.button.active {
+          background-color: white;
+        }
+
+        #subtitle-menu-content {
+          margin-top: 1em;
+        }
+
       </style>
 
       <!-- Google Analytics -->
@@ -53,233 +65,135 @@
     </div>
 
     <div class="ui main container padding_top">
-      <div class="ui fluid grid">
-        <div class="three wide column">
+      <div class="ui grid">
+        <div class="row">
           <div id="subtitle-menu-content">
           </div>
         </div>
-        <div class="thirteen wide column">
-          <div id="card-content">
+        <div class="center row">
+          <div class="ui basic segment">
+            <div id="card-content">
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <script>
-      const cards = [{
-        imageUrl: 'https://www.nosolorol.com/4085-large_default/la-mas-profunda-herida-papel.jpg',
-        title: 'La más profunda herida',
-        subTitle: 'Hombre Lobo',
-        description: 'Para el Culto de Fenris, el mundo se ha vuelto una zona de guerra. No hay espacio para la piedad: si no estás con Gaia, eres el enemigo. Su extremismo no surgió de la nada; es una respuesta desesperada a las tragedias y las pérdidas que han marcado su camino. ¿Estás listo para unirte a una causa que no conoce la piedad?',
-        contentWarning: 'Violencia, Lenguaje soez, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '5.99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/4086-large_default/recuperacion-papel.jpg',
-        title: 'Recuperación',
-        subTitle: 'Hombre Lobo',
-        description: 'Una manada entera de Garou ha desaparecido, dejando un Túmulo indefenso y a merced de un enemigo que creían lejano. Ahora, una manada de jóvenes inexpertos debe adentrarse en la oscuridad, investigar qué ha sucedido y contraatacar. No hay tiempo que perder, la supervivencia del clan pende de un hilo. ¿Estás listo para esta misión?',
-        contentWarning: 'Violencia, Lenguaje soez, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '5.99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/4093-large_default/pantalla-del-narrador-y-kit-de-herramientas-hombre-lobo-el-apocalipsis-5-edicion-papel.jpg',
-        title: 'Lo que las aguas escondían',
-        subTitle: 'Hombre Lobo',
-        description: 'Cada batalla es un nuevo desafío, algunas se ganan, otras se pierden. ¿Pero de qué sirven si las pérdidas se acumulan y las victorias son cada vez más escasas? La sanación parece una utopía inalcanzable, mientras la destrucción se ha convertido en nuestra especialidad. ¿Estás listo para esta lucha?',
-        contentWarning: 'Violencia, Lenguaje soez, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '15,00€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/4089-large_default/hombre-lobo-el-apocalipsis-5-edicion-papel.jpg',
-        title: 'No importa cuán pequeño',
-        subTitle: 'Hombre Lobo',
-        description: 'Tu pariente te lo ha pedido, y no puedes decir que no. Un amigo ha desaparecido y el último rastro que tienes de él es su participación en las actividades del misterioso club de horticultura de la Zona de la Arboleda Oeste. ¿Qué puede esconder un simple club de jardinería? ¿Es solo una desaparición o un terrible secreto? Si tienes lo que hay que tener, adéntrate en la Arboleda Oeste para desvelar una verdad que podría cambiarte para siempre.',
-        contentWarning: 'Violencia, Lenguaje soez, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '29,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/2295-large_default/habitacion-311.jpg',
-        title: 'Habitación 311',
-        subTitle: 'Cultos Innombrables',
-        description: 'Hay lugares que no olvidan, y el hotel Black Pines es uno de ellos. Desde la masacre de 1926, el pueblo de Forestmouth sufre sucesos cada vez más extraños. Algunos susurran que algo siniestro quedó atrapado en el hotel, y ahora se agita, esperando... atrayendo a los curiosos, a los valientes que anhelan desenterrar un secreto que quizás debió quedar en el olvido. ¿Eres lo suficientemente valiente para unirte a la búsqueda?',
-        contentWarning: 'Violencia, Lenguaje soez, Nudismo, Temas maduros, Consumo de sustancias',
-        players: '2-4',
-        sessions: '1',
-        cost: '9,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/2355-large_default/inous-papel.jpg',
-        title: 'INous',
-        subTitle: 'Cultos Innombrables',
-        description: 'Un crowdfunding millonario, un dispositivo revolucionario, un genio de la tecnología... y un final sangriento. Edward Pretorious, el visionario detrás del iNous, ha aparecido decapitado justo cuando su proyecto estaba a punto de ver la luz. Su muerte se produce tras un mar de retrasos y quejas de sus seguidores. ¿Quién lo mató? ¿Uno de sus frustrados mecenas o un rival celoso? El misterio del iNous acaba de comenzar.',
-        contentWarning: 'Violencia, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '9,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/2426-large_default/glitch.jpg',
-        title: 'Glitch',
-        subTitle: 'Cultos Innombrables',
-        description: 'Un evento único ha sacudido la noche: una explosión extraterrestre ha iluminado el cielo de la ciudad, desatando una onda expansiva que ha roto cristales, pero que, sorprendentemente, ha dejado pocos heridos. Lo que parece un simple desastre se convierte en el inicio de una aventura que desafiará todo lo que crees saber. ¿Te atreves a desvelar la verdad que se esconde detrás de este impactante suceso?',
-        contentWarning: 'Violencia, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '9,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/2449-large_default/la-lista-papel.jpg',
-        title: 'La Lista',
-        subTitle: 'Cultos Innombrables',
-        description: 'Un extraño personaje te ha convocado en el corazón de Londres con una oferta imposible de rechazar: una misión intensa y de alto riesgo con una recompensa que cambiará tu vida. El tiempo apremia y cada decisión que tomes pondrá a prueba tus límites morales. ¿Aceptarás el desafío y te harás con el botín, o dejarás que la ética se interponga en tu camino?',
-        contentWarning: 'Violencia, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '9,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/2869-large_default/el-operativo-voor-papel.jpg',
-        title: 'El Operativo Voor',
-        subTitle: 'Cultos Innombrables',
-        description: 'Has cruzado la línea y ahora no hay vuelta atrás. Estás atrapado entre una letal red de espionaje con recursos ilimitados y un grupo de extremistas que, aunque despreciables, podrían ser tu única esperanza. ¿Serás capaz de sobrevivir sin perder tu esencia en un mundo donde la guerra es la única moneda de cambio? Lucha por tu vida, lucha por tu alma. Bienvenido al caos.',
-        contentWarning: 'Violencia, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '9,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/4083-large_default/dentelladas-de-amor-papel.jpg',
-        title: 'Dentelladas De Amor',
-        subTitle: 'Vampiro',
-        description: 'Es la última noche del año y la Príncipe te ha encomendado la misión más importante: escoltar a su Chiquillo a la fiesta de Nochevieja más salvaje en las madrigueras de los Nosferatu. Solo tienes una regla: devolverlo antes del amanecer, sin un rasguño. ¿Crees que un simple recado puede ser tan sencillo? En las sombras de la ciudad, un encargo de Nochevieja puede convertirse en una pesadilla.',
-        contentWarning: 'Violencia, Consumo de sustancias, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '5,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/4084-large_default/catar-la-luna-papel.jpg',
-        title: 'Catar la Luna',
-        subTitle: 'Vampiro',
-        description: 'Corre el rumor de una sangre especial, un elixir exótico llamado "luna de cereza" que provoca una euforia sin igual. Todos quieren probarla, pero nadie sabe de dónde viene. ¿Te atreves a buscarla y a descubrir el secreto detrás de este misterioso manjar? Saciar tu sed nunca había sido tan tentador.',
-        contentWarning: 'Violencia, Consumo de sustancias, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '5,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/4087-large_default/caso-sin-resolver-papel.jpg',
-        title: 'Caso sin Resolver',
-        subTitle: 'Cazador',
-        description: 'El pasado no siempre descansa en paz. A veces, vuelve a la vida. Hace tres años, Sam, el mejor amigo de Daria, murió. Ahora, está de vuelta, vivo, caminando entre nosotros. ¿Es un caso de identidad equivocada o una prueba de que los muertos están regresando? Ayuda a Daria a descubrir la verdad, pero prepárate, porque si los muertos caminan de nuevo, la línea entre la vida y la muerte podría desvanecerse para siempre.',
-        contentWarning: 'Violencia, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '5,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/4088-large_default/su-ultimo-truco-papel.jpg',
-        title: 'Su Último Truco',
-        subTitle: 'Cazador',
-        description: 'Cuando la verdad es más extraña que la ficción, los únicos que pueden encontrarla son aquellos que la cazan. En la ciudad de Rochefort, Massachusetts, el famoso "buscador de la verdad paranormal" Aaron Phelps ha desaparecido. Su última pista se desvanece en el único misterio que no pudo resolver: un lugar infestado de fantasmas. ¿Tienes lo que se necesita para enfrentarte a esta verdad y al horror que te espera?',
-        contentWarning: 'Violencia, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '5,99€'
-      }, {
-        imageUrl: 'https://www.nosolorol.com/3769-large_default/cazador-pantalla-del-narrador-y-kit-de-herramientas-papel.jpg',
-        title: 'Susurros en el tiempo',
-        subTitle: 'Cazador',
-        description: 'Bajo la bruma de un pueblo costero, algo acecha. Un rastro de víctimas inconscientes, esparcidas por la costa, siembra el pánico. ¿Es una bestia? ¿Una maldición? Los rumores se mezclan con la realidad, y el mar canta una canción de terror. ¡Es hora de actuar, Cazadores! Desvelad el misterio. Enfrentad al monstruo.',
-        contentWarning: 'Violencia, Consumo de sustancias, Lenguaje soez, Nudismo, Temas maduros',
-        players: '2-4',
-        sessions: '1',
-        cost: '15,00€'
-      }, {
-        imageUrl: 'https://cdn.svc.asmodee.net/production-edgees/uploads/image-converter/2022/10/bbg_Cthulhu_El-faro.webp',
-        title: 'El faro sin luz',
-        subTitle: 'La Llamada de Cthulhu',
-        description: 'Un naufragio, una tormenta que se acerca y un faro que ha dejado de parpadear. El 12 de abril de 1926, tu única esperanza es alcanzar la orilla de una isla solitaria. Pero en la oscuridad, algo más se agita. Beacon Island no solo ofrece refugio de los escollos, sino que oculta un misterio más aterrador que cualquier tempestad. ¿Lograrás encender la luz o te perderás para siempre en las sombras de la isla?',
-        contentWarning: 'Violencia',
-        players: '2-4',
-        sessions: '1',
-        cost: 'Gratis'
-      }, {
-        imageUrl: 'https://shadowlands.es/wp-content/uploads/2024/03/mas-alla-del-tiempo-icono-pdf.jpg',
-        title: 'Castle Bravo',
-        subTitle: 'El rastro de Cthulhu',
-        description: 'Eres un científico y has sido destinado al USS Bairoko, un portaaviones de escolta navegando en el Pacífico Sur. Formas parte del Séptimo Grupo de Combate y participarás en la Operación Castle, una serie de pruebas secretas que consisten en varias detonaciones termonucleares. Pero tras la primera explosión, tú y tus compañeros notáis que las cosas empiezan a volverse extrañas. Deberás averiguar qué está pasando si quieres salvar la nave y, lo más importante, salvar tu propia vida.',
-        contentWarning: 'Terror corporal, Gore',
-        players: '2-4',
-        sessions: '1',
-        cost: '12,95€'
-      }, {
-        imageUrl: 'https://cdn.svc.asmodee.net/production-edgees/uploads/image-converter/2022/10/bbg_Cthulhu_reglas_01.webp',
-        title: 'La maldición de la Casa Corbitt',
-        subTitle: 'La Llamada de Cthulhu',
-        description: 'Un arrendador, el Sr. Knott, os pide que examinéis un viejo caserón que posee en el centro de Boston, conocido como la Casa Corbitt. Los anteriores inquilinos, la familia Macario, se vieron implicados en una tragedia, y el propietario quiere comprender los misteriosos acontecimientos que tuvieron lugar allí y dejar las cosas claras. El Sr. Knott no ha podido alquilar la casa desde que sucedió la tragedia, y él espera que podáis aclarar la situación y restaurar su buen nombre.',
-        contentWarning: 'Terror',
-        players: '2-4',
-        sessions: '1',
-        cost: 'Gratis'
-      }]
-
-      const cardContent = document.getElementById('card-content');
-      const subTitleContent = document.getElementById('subtitle-menu-content');
-      const _showCardsHtml = (cardsHtml) => cardContent.innerHTML = `<div class="ui link cards">${cardsHtml}</div>`;
-      const _clearCardsHtml = () => cardContent.innerHTML = '';
-      const _showSubTitleMenuHtml = (subTitleHtml) => subTitleContent.innerHTML = `<div class="ui vertical fluid tabular menu"><a class="active item" data-value="">Todas</a>${subTitleHtml}</div>`;
-      const _deactivateAllSubTitleMenu = () => jQuery('#subtitle-menu-content .ui.menu .item').removeClass('active');
-      const _activateSubTitleMenu = (element) => jQuery(element).addClass('active');
-      const _allSubTitles = (cards) => cards.map((card) => card.subTitle).filter((value, index, array) => array.indexOf(value) === index).sort();
-      const _filterCardsBy = (subTitle) => (cards) => subTitle ? cards.filter((card) => card.subTitle === subTitle) : cards;
-      const _renderSubtitleHtml = (subTitles) => subTitles.map(_subTitleTemplate).join('');
-      const _renderCardsHtml = (cards) => cards.map(_cardTemplate).join('');
-      const _subTitleTemplate = (subTitle) => `<a class="item" data-value="${subTitle}">${subTitle}</a>`;
-      const _cardTemplate = ({
-        imageUrl,
-        title,
-        subTitle,
-        description,
-        contentWarning,
-        players,
-        sessions,
-        cost
-      }) => {
-        return `<div class="card">
-          <div class="image">
-            <img src="${imageUrl}">
+      jQuery(() => {
+        const GAMES_TSV_URL = 'https://docs.google.com/spreadsheets/d/1hX6Y0wqFcoyBsIQXkgypgogijbrTSqZRJGRw5Lqh9Ek/export?format=tsv';
+        const cardContent = document.getElementById('card-content');
+        const subTitleContent = document.getElementById('subtitle-menu-content');
+        const _showCardsHtml = (cardsHtml) => cardContent.innerHTML = `<div class="ui stackable three column grid">${cardsHtml}</div>`;
+        const _clearCardsHtml = () => cardContent.innerHTML = '';
+        const _showSubTitleMenuHtml = (subTitleHtml) => subTitleContent.innerHTML = `
+          <div class="ui center aligned grid">
+            <div class="ui orange basic button active" data-value="">Todas</div>
+            ${subTitleHtml}
           </div>
-          <div class="content">
-            <div class="header">${title}</div>
-            <div class="meta">
-              <a>${subTitle}</a>
-            </div>
-            <div class="description">
-              ${description}
-            </div>
-          </div>
-          <div class="extra content">
-            <div>
-              <i class="user icon"></i>
-              ${players}
-            </div>
-            <div>
-              ${contentWarning}
-            </div>
-          </div>
-        </div>`;
-      };
-      _showSubTitleMenuHtml(_renderSubtitleHtml(_allSubTitles(cards)));
-      _showCardsHtml(_renderCardsHtml(cards));
+        `;
 
-      jQuery('#subtitle-menu-content .ui.menu .item').on('click', (event) => {
-        event.stopPropagation();
-        event.preventDefault();
+        // <div class="ui fluid tabular menu"><a class="active item" data-value="">Todas</a>${subTitleHtml}</div>`;
+        const _deactivateAllSubTitleMenu = () => jQuery('#subtitle-menu-content .ui.button').removeClass('active').removeClass('orange').removeClass('basic');
+        const _activateSubTitleMenu = (element) => jQuery(element).addClass('active').addClass('orange').addClass('basic');
+        const _allSubTitles = (cards) => cards.map((card) => card.subTitle).filter((value, index, array) => array.indexOf(value) === index).sort();
+        const _filterCardsBy = (subTitle) => (cards) => subTitle ? cards.filter((card) => card.subTitle === subTitle) : cards;
+        const _renderSubtitleHtml = (subTitles) => subTitles.map(_subTitleTemplate).join('');
+        const _renderCardsHtml = (cards) => cards.map(_cardTemplate).join('');
+        const _subTitleTemplate = (subTitle) => `<div class="ui button" data-value="${subTitle}">${subTitle}</div>`;
 
-        const subTitle = jQuery(event.currentTarget).data('value');
-        _deactivateAllSubTitleMenu();
-        _clearCardsHtml();
-        _showCardsHtml(_renderCardsHtml(_filterCardsBy(subTitle)(cards)));
-        _activateSubTitleMenu(event.currentTarget);
-        return false;
+        const _cardTemplate = ({
+          imageUrl,
+          title,
+          subTitle,
+          description,
+          contentWarning,
+          players,
+          sessions,
+          cost
+        }) => {
+          return `<div class="column"><div class="ui fluid card">
+            <div class="image">
+              <img src="${imageUrl}">
+            </div>
+            <div class="content">
+              <div class="header">${title}</div>
+              <div class="meta">
+                <a>${subTitle}</a>
+              </div>
+              <div class="description">
+                ${description}
+              </div>
+            </div>
+            <div class="extra content">
+              <div>
+                <i class="user icon"></i>
+                ${players}
+              </div>
+              <div>
+                ${contentWarning}
+              </div>
+            </div>
+          </div></div>`;
+        };
+
+        $.ajax({
+          url: GAMES_TSV_URL,
+          method: 'GET',
+          dataType: 'text', // IMPORTANT for TSV
+          success: function(tsvData) {
+            let cards = tsvData.trim().split('\n').map(row => row.split('\t'));
+
+            // 0: "Titulo"
+            // 1: "Línea"
+            // 2: "Género" -
+            // 3: "Descripción"
+            // 4: "Portada"
+            // 5: "Aviso de contenido"
+            // 6: "Jugadores"
+            // 7: "Sesiones"
+            // 8: "Jugar" -
+            // 9: "Publicar en" -
+
+            // Quitar la primera linea
+            cards = cards.slice(1);
+            const _parseData = (card) => {
+              return {
+                title: card[0],
+                subTitle: card[1],
+                theme: card[2],
+                description: card[3],
+                imageUrl: card[4],
+                contentWarning: card[5],
+                players: card[6],
+                sessions: card[7],
+                playMode: card[8],
+                cost: '0.00€'
+              };
+            };
+            cards = cards.map(_parseData)
+
+            console.log('CARDs', cards);
+
+            _showSubTitleMenuHtml(_renderSubtitleHtml(_allSubTitles(cards)));
+            _showCardsHtml(_renderCardsHtml(cards));
+
+            jQuery('#subtitle-menu-content .ui.button').on('click', (event) => {
+              // event.stopPropagation();
+              // event.preventDefault();
+
+              const subTitle = jQuery(event.currentTarget).data('value');
+              _deactivateAllSubTitleMenu();
+              _clearCardsHtml();
+              _showCardsHtml(_renderCardsHtml(_filterCardsBy(subTitle)(cards)));
+              _activateSubTitleMenu(event.currentTarget);
+              return false;
+            });
+          },
+          error: function(xhr, status, error) {
+              console.error('Download failed:', error);
+          }
+        });
       });
     </script>
   </body>
